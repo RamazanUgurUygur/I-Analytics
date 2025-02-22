@@ -37,7 +37,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
 s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
 figure, header, nav, section, article, aside, footer, figcaption {
-  margin: 0;
+  margin: auto;
   padding: 0;
   border: 0;
   outline: 0;
@@ -708,7 +708,6 @@ header
     display: flex !important;
   }
 }
-
 
 /* 
 ---------------------------------------------
@@ -1766,3 +1765,180 @@ preloader
   opacity: 0;
 }
 /* 
+
+/* ============================= */
+/* === HİZMETLER - RESPONSIVE === */
+/* ============================= */
+
+/* 1200px ve üzeri (Büyük ekranlar - Laptop & Desktop) */
+@media (min-width: 1200px) {
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Kesinlikle 3 sütun olur */
+    max-width: 1200px; /* Maksimum genişlik belirler */
+    margin: auto; /* Ortalar */
+    gap: 20px;
+}
+
+  .services-grid .service-box {
+      /* padding: 0 10px; */
+      font-size: 18px;
+      height: 94px;
+      width: 285px;
+  }
+
+  .service-modal-content {
+      max-width: 600px;
+  }
+
+  
+}
+
+/* 1199px - 992px (Orta ekranlar - Küçük Laptop & Büyük Tablet) */
+@media (max-width: 1200px) {
+  .services-container p {
+    margin: 20px 0;
+  }
+
+  .services-grid {
+      grid-template-columns: repeat(2, minmax(250px, 1fr));
+      margin-top: 30px;
+  }
+
+  .service-box {
+      font-size: 16px;
+      padding: 20px;
+      height: 90px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 270px;
+  }
+
+  .services-grid>:nth-child(5) {
+    display: none;
+  }
+
+  .services-grid>:nth-child(8) {
+    display: none;
+  }
+}
+
+/* 991px - 768px (Tablet - iPad, Galaxy Tab vb.) */
+@media (max-width: 991px) {
+  .services-grid {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 15px;
+  }
+
+  .service-box {
+      padding: 18px;
+      font-size: 16px;
+      width: 80%;
+      margin: auto;
+  }
+
+  .service-modal-content {
+      max-width: 500px;
+  }
+
+  .services-grid>:nth-child(5) {
+    display: none;
+  }
+
+  .services-grid>:nth-child(8) {
+    display: none;
+  }
+}
+
+/* 767px - 576px (Büyük Telefonlar - iPhone Plus, Galaxy Note vb.) */
+@media (max-width: 767px) {
+  .services-container {
+      padding: 30px;
+  }
+
+  .services-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .services-grid>:nth-child(5) {
+    display: none;
+  }
+
+  .services-grid>:nth-child(8) {
+    display: none;
+  }
+
+  .service-box {
+      width: 90%;
+      padding: 15px;
+      font-size: 14px;
+  }
+
+  .service-modal-content {
+      max-width: 400px;
+  }
+}
+
+/* 575px ve altı (Küçük Telefonlar - iPhone SE, Galaxy A serisi vb.) */
+@media (max-width: 575px) {
+  .services-container {
+      padding: 20px;
+  }
+
+  .service-box {
+      width: 100%;
+      padding: 12px;
+      font-size: 13px;
+  }
+
+  .service-modal {
+      padding: 10px;
+  }
+
+  .service-modal-content {
+      max-width: 350px;
+  }
+}
+
+/* ============================= */
+/* === MODAL - RESPONSIVE === */
+/* ============================= */
+
+/* Küçük Ekranlarda Modal Tam Ekrana Yakın */
+@media (max-width: 768px) {
+  .service-modal-content {
+      max-width: 90%;
+      height: auto;
+      padding: 15px;
+  }
+
+  .service-modal-close {
+      font-size: 14px;
+      padding: 8px;
+  }
+}
+
+/* Çok Küçük Telefonlarda Modal İçeriği Küçült */
+@media (max-width: 480px) {
+  .service-modal-content {
+      max-width: 95%;
+      padding: 10px;
+  }
+}
+
+@media (max-width: 321px) {
+  .services-container {
+    max-width: 320px;
+  }
+}
+
+/* Modal Açıldığında Sayfa Kaymasını Kesinlikle Engelle */
+body.modal-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
