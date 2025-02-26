@@ -1373,6 +1373,7 @@ preloader
 }
 
 .slider-item.active {
+  width: 600px;
   display: flex;
 }
 
