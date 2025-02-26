@@ -1050,6 +1050,14 @@ parallax & home seperator
       width: 100%;
   }
 
+  .scroll-top {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    bottom: 15px;
+    left: 15px;
+}
+
   .mini .mini-content .mini-box {
       width: 300px; /* Daha geniş yap */
       max-width: 900px; /* Maksimum genişlik sınırı koy */
