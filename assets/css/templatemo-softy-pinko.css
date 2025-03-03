@@ -514,6 +514,71 @@ header
   display: none;
 }
 
+.select-menu {
+  position: absolute;
+  width: 380px;
+  margin: 0px;
+  z-index: 1;
+  margin: 0 auto;
+}
+
+.select-menu .select-btn  {
+  display: flex;
+  height: 55px;
+  background-color: white;
+  border-radius: 0 0 20px 0;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 400;
+  align-items: center;
+}
+
+.select-btn i {
+  font-size: 25px;
+  transition: .35s;
+}
+
+.select-menu.active .select-btn i {
+  transform: rotate(-180deg);
+}
+
+.select-menu .options {
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 8px;
+  background-color: white;
+  display: none; /*  none */
+}
+
+.select-menu.active .options {
+  display: block;
+}
+
+.options .option {
+  display: flex;
+  height: 55px;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 8px;
+  align-items: center;
+  background-color: white;
+}
+
+.options .option:hover {
+  background-color: #f2f2f2;
+}
+
+.option img {
+  width: 40px;
+  
+}
+
+.option span {
+  font-size: 18px;
+  color: #333;
+}
+
 .header-area .main-nav .menu-trigger span,
 .header-area .main-nav .menu-trigger span:before,
 .header-area .main-nav .menu-trigger span:after {
